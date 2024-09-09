@@ -10,7 +10,9 @@
             color: white;
         }
 
-        h1 {
+        h1 {display:flex;
+        flex-direction:rows;
+        justify-content:center;
             font-size: 18px;
         }
 p {
@@ -63,7 +65,8 @@ p {
             flex-direction: rows;
             justify-content: center;
             text-align: center;
-            margin-left: 20%;
+            margin-left: 25%;
+            margin-top:2px;
         }
 
         #verificar {
@@ -230,9 +233,10 @@ p {
         let numeroBloqueadosTexto = `Números Bloqueados: ${numerosBloqueados.join(", ")}`;
         let numerosSelecionadosTexto = `Números Selecionados: ${numerosSelecionados.join(", ")}`;
         let mensagem = `${numeroBloqueadosTexto}\n${numerosSelecionadosTexto}`;
-        let url = `https://wa.me/?text=${encodeURIComponent(mensagem)}`;
-        window.open(url, '_blank');
-    }
+        let "https://api.whatsapp.com/send?phone=5571992290058&text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+}
+    
 
     function liberarBotoesAposCodigo() {
         let codigoDigitado = parseInt(document.getElementById("codigo").value);
