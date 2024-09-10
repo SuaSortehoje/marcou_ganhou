@@ -97,7 +97,7 @@
     <div id="numerosBloqueadosContainer"></div> <!-- Container para os números bloqueados -->
     <p id="contadorNumeros">Números selecionados: 0/15</p>
     <p id="temporizador"></p>
-    <button id="enviar" style="display:none;" onclick="enviarViaWhatsApp()">Enviar</button>
+    <button id="enviar" style="display:none;margin-left:30%" onclick="enviarViaWhatsApp()">RECEBER O PREMIO</button>
     <p style="color:gold">Marque 15 números de 50 e acertando 5 dos sorteados, ganha na hora R$ 50,00.</p>
     <p>Solicite o código ao cambista.</p>
 
@@ -203,7 +203,7 @@
         setTimeout(() => {
             document.getElementById("numerosBloqueadosContainer").style.display = "none";
             location.reload(); // Recarregar a página após os números sumirem
-        }, 15000); // 10000 milissegundos = 10 segundos
+        }, 10000); // 15000 milissegundos = 10 segundos
     } else if (codigoUsado.includes(codigoDigitado)) {
         document.getElementById("mensagem").innerText = "Este código já foi usado. Tente outro.";
     } else {
@@ -253,12 +253,24 @@ document.getElementById("codigo").addEventListener("input", liberarBotoesAposCod
         }
 
         function enviarViaWhatsApp() {
-            let numerosBloqueadosTexto = `Números Bloqueados: ${numerosBloqueados.join(", ")}`;
-            let numerosSelecionadosTexto = `Números Selecionados: ${numerosSelecionados.join(", ")}`;
-            let mensagem = `${numerosBloqueadosTexto}\n${numerosSelecionadosTexto}`;
-            let url = "https://api.whatsapp.com/send?phone=5571992290058&text=" + encodeURIComponent(mensagem);
-            window.open(url, "_blank");
-        }
+    let numeroBloqueadosTexto = `Números Bloqueados: ${numerosBloqueados.join(", ")}`;
+    let numerosSelecionadosTexto = `Números Selecionados: ${numerosSelecionados.join(", ")}`;
+    
+    // Obter a data e hora atual
+    let dataAtual = new Date();
+    let dataTexto = `Data: ${dataAtual.toLocaleDateString()}`;
+    let horaTexto = `Hora: ${dataAtual.toLocaleTimeString()}`;
+
+    // Criar a mensagem
+    let mensagem = `${numeroBloqueadosTexto}\n${numerosSelecionadosTexto}\n${dataTexto}\n${horaTexto}`;
+
+    // Criar a URL para enviar via WhatsApp
+    let url = "https://api.whatsapp.com/send?phone=5571992290058&text=" + encodeURIComponent(mensagem);
+    window.open(url, "_blank");
+}
+
+// Certifique-se de que a função enviarViaWhatsApp seja chamada ao clicar no botão "Enviar"
+document.getElementById("enviar").addEventListener("click", enviarViaWhatsApp);
 
         function liberarBotoesAposCodigo() {
             let codigoDigitado = parseInt(document.getElementById("codigo").value);
