@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACERTOU LEVOU NA HORA</title>
+    <title>ACERTOU LEVA NA HORA</title>
     <style>
         body {
             background: black;
@@ -11,12 +11,16 @@
         }
 
         h1 {
+            display: flex;
+            justify-content: center;
             font-size: 18px;
         }
-p {
-    font-size:14px;
-    text-align:center;
-}
+
+        p {
+            font-size: 14px;
+            text-align: center;
+        }
+
         .btn {
             margin: 1px;
             padding: 10px 20px;
@@ -24,17 +28,19 @@ p {
             border-radius: 5px;
             cursor: pointer;
             box-sizing: border-box;
+            
+            margin:2px;
         }
 
         .btn.selected {
             background-color: yellow;
-            color:white;
+            color: white;
         }
 
         .btn.blocked {
             background-color: red;
-            color:white;
-            font-weigth:bold;
+            color: white;
+            font-weight: bold;
         }
 
         .btn.vender {
@@ -54,199 +60,190 @@ p {
             grid-template-columns: repeat(5, 1fr);
             gap: 1px;
             max-width: 350px;
-            margin: 20px ;;;
+            margin: 20px;
             display: none; /* Inicialmente escondido */
         }
 
         .codig {
             display: flex;
-            flex-direction: rows;
             justify-content: center;
             text-align: center;
-            margin-left: 20%;
+            margin-left: 25%;
+            margin-top: 5px;
+            border-radius:10px;
         }
 
         #verificar {
-            margin-left: 40%;
+            margin-left: 35%;
             margin-top: 12px;
             background: green;
+            border-radius:10px;
             color: white;
         }
-        
+
     </style>
 </head>
 <body>
-<h1>ACERTOU LEVOU NA HORA R$ 50.00</h1>
-<input class="codig" type="number" id="codigo" placeholder="Digite o código">
-<div id="numeros"></div>
-<button id="verificar" onclick="verificar()" disabled>Verificar</button>
-<p id="mensagem"></p>
-<div id="numerosBloqueadosContainer"></div> <!-- Container para os números bloqueados -->
-<p id="contadorNumeros">Números selecionados: 0/15</p>
-<p id="temporizador"></p>
-<button id="enviar" style="display:none;" onclick="enviarViaWhatsApp()">Enviar</button>
-<p style ="color:gold">Marque 15 números de 50 e acertando 5 dos SORTEADO, ganha na hora R$ 50,00.</p>
-<p>Solicite o código ao cambista.</p>
-<script>
-    let numerosBloqueados = [];
-    let tempoRestante = 60; // 1 minuto em segundos para a troca dos números bloqueados
-    let codigos = [19563, 65375, 129454, 647585, 443755, 9788854, 699995, 767375, 5600454, 6477285, 878674, 4413795, 0987854, 69199895, 000811, 010815,  031098, 080291, 036674, 0716453, 0592354, 084688, 050967, 067056, 0209885, 0487094, 0337807, 059659, 038717, 0309265, 0317673, 050877, 092904, 044642, 03945, 0887965, 090900, 049194, 024920, 095658, 034967, 0840998, 021049, 073964, 043912, 018911, 011291, 0904437, 059575, 010963, 089852, 075522, 096092, 0216594, 091902, 028477, 010169, 070911, 022997, 08740100, 062110, 0336098, 048598, 063519, 02863, 0732882]; // Lista de códigos válidos
-    let codigoUsado = [];
-    let numerosSelecionados = [];
+    <h1>ACERTOU LEVA NA HORA R$ 50.00</h1>
+    <input class="codig" type="number" id="codigo" placeholder="Digite o código">
+    <div id="numeros"></div>
+    <button id="verificar" onclick="verificar()" disabled>VER RESULTADO </button>
+    <p id="mensagem"></p>
+    <div id="numerosBloqueadosContainer"></div> <!-- Container para os números bloqueados -->
+    <p id="contadorNumeros">Números selecionados: 0/15</p>
+    <p id="temporizador"></p>
+    <button id="enviar" style="display:none;" onclick="enviarViaWhatsApp()">Enviar</button>
+    <p style="color:gold">Marque 15 números de 50 e acertando 5 dos sorteados, ganha na hora R$ 50,00.</p>
+    <p>Solicite o código ao cambista.</p>
 
-    iniciar();
+    <script>
+        let numerosBloqueados = [];
+        let codigos = [1958863, 6536775, 1294584, 6476585, 4438755, 9788854, 6999985, 7673875, 5600454, 6477285, 8788674, 4413795, 9878854, 6919989, 8119998, 1084815, 3135098, 8065291, 3662274, 7164153, 5923254, 8468855, 5043967, 6732056, 2091885, 4870214, 3378017, 5965999, 3871987, 3098265, 3176673, 5076877, 9297604, 4462242, 3941235, 8879695, 9609070, 4919844, 2492270, 9565448, 3496557, 8407998, 2176049, 7396664, 4663912, 1897611, 1129891, 9044327, 5956575, 1096123, 8998852, 7552288, 9609264, 2165914, 9190432, 2843377, 1016966, 7023911, 2296597, 8740100, 6212110, 3360928, 4859854, 6355519, 2866713, 7328862]; // Lista de códigos válidos
+        let codigoUsado = [];
+        let numerosSelecionados = [];
 
-    function iniciar() {
-        carregarCodigoUsado();
-        trocarNumerosBloqueados();
-        criarBotoes();
-        setInterval(trocarNumerosBloqueados, 60000); // Troca os números bloqueados a cada 1 minuto
-    }
+        iniciar();
 
-    function trocarNumerosBloqueados() {
-        numerosBloqueados = [];
-        while (numerosBloqueados.length < 5) {
-            let num = Math.floor(Math.random() * 50) + 1;
-            if (numerosBloqueados.indexOf(num) === -1) numerosBloqueados.push(num);
+        function iniciar() {
+            carregarCodigoUsado();
+            trocarNumerosBloqueados();
+            criarBotoes();
+            setInterval(trocarNumerosBloqueados, 60000); // Troca os números bloqueados a cada 1 minuto
         }
-    }
 
-    function atualizarNumerosBloqueados() {
-        const container = document.getElementById("numerosBloqueadosContainer");
-        container.innerHTML = ''; // Limpar o container antes de adicionar os botões
-        numerosBloqueados.forEach(num => {
-            let btn = document.createElement("button");
-            btn.classList.add("btn", "blocked");
-            btn.innerText = num;
-            container.appendChild(btn);
-        });
-    }
-
-    function criarBotoes() {
-        const container = document.getElementById("numeros");
-        container.innerHTML = ''; // Limpar o container antes de criar os botões
-        for (let i = 1; i <= 50; i++) {
-            let btn = document.createElement("button");
-            btn.classList.add("btn");
-            btn.innerText = i;
-            btn.id = `num${i}`;
-            btn.onclick = () => selecionarNumero(i);
-            btn.disabled = true; // Inicialmente desabilitado
-            container.appendChild(btn);
-        }
-    }
-
-  function selecionarNumero(num) {
-    let idx = numerosSelecionados.indexOf(num);
-
-    if (idx === -1 && numerosSelecionados.length < 15) {
-        // Adiciona o número selecionado ao array
-        numerosSelecionados.push(num);
-        document.getElementById(`num${num}`).classList.add("selected");
-
-        // Verifica se o número faz parte dos bloqueados
-        if (numerosBloqueados.includes(num)) {
-            document.getElementById(`num${num}`).classList.add("vender");
-        }
-    } else if (idx !== -1 && numerosSelecionados.length <= 15) {
-        // Se o número já estiver na lista e a quantidade de selecionados é menor ou igual a 15
-        // Não faz nada para impedir a desmarcação
-    }
-
-    atualizarContador();
-    verificarBotaoVerificar();
-}
-
-    function atualizarContador() {
-        document.getElementById("contadorNumeros").innerText = `Números selecionados: ${numerosSelecionados.length}/15`;
-    }
-
-    function verificarBotaoVerificar() {
-        if (numerosSelecionados.length === 15) {
-            document.getElementById("verificar").disabled = false; // Habilitar botão "Verificar"
-        } else {
-            document.getElementById("verificar").disabled = true;
-        }
-    }
-
-    function verificar() {
-        let codigoDigitado = parseInt(document.getElementById("codigo").value);
-        let acertos = numerosSelecionados.filter(n => numerosBloqueados.includes(n)).length;
-
-        if (codigos.includes(codigoDigitado) && !codigoUsado.includes(codigoDigitado)) {
-            codigoUsado.push(codigoDigitado);
-            salvarCodigoUsado();
-            
-            atualizarNumerosBloqueados(); // Mostrar os números bloqueados somente aqui
-            document.getElementById("numerosBloqueadosContainer").style.display = "grid";
-            
-            if (acertos === 5) {
-                msg += "Parabéns, você ganhou!";
-                document.getElementById("enviar").style.display = "block"; // Mostrar botão "Enviar"
-            } else {
-                msg += "Tente novamente.";
-                document.getElementById("enviar").style.display = "none";
+        function trocarNumerosBloqueados() {
+            numerosBloqueados = [];
+            while (numerosBloqueados.length < 5) {
+                let num = Math.floor(Math.random() * 50) + 1;
+                if (numerosBloqueados.indexOf(num) === -1) numerosBloqueados.push(num);
             }
-            document.getElementById("mensagem").innerText = msg;
-        } else if (codigoUsado.includes(codigoDigitado)) {
-            document.getElementById("mensagem").innerText = "Este código já foi usado. Tente outro.";
-        } else {
-            document.getElementById("mensagem").innerText = "Código inválido.";
         }
 
-        limparCampos();
-    }
-
-    function limparCampos() {
-        document.getElementById("codigo").value = '';
-        numerosSelecionados = [];
-        atualizarContador();
-        verificarBotaoVerificar();
-        for (let i = 1; i <= 50; i++) {
-            document.getElementById(`num${i}`).classList.remove("selected", "vender");
+        function atualizarNumerosBloqueados() {
+            const container = document.getElementById("numerosBloqueadosContainer");
+            container.innerHTML = ''; // Limpar o container antes de adicionar os botões
+            numerosBloqueados.forEach(num => {
+                let btn = document.createElement("button");
+                btn.classList.add("btn", "blocked");
+                btn.innerText = num;
+                container.appendChild(btn);
+            });
         }
-        liberarBotoes(false); // Bloquear botões após a verificação
-    }
 
-    function liberarBotoes(habilitar) {
-        for (let i = 1; i <= 50; i++) {
-            document.getElementById(`num${i}`).disabled = !habilitar;
+        function criarBotoes() {
+            const container = document.getElementById("numeros");
+            container.innerHTML = ''; // Limpar o container antes de criar os botões
+            for (let i = 1; i <= 50; i++) {
+                let btn = document.createElement("button");
+                btn.classList.add("btn");
+                btn.innerText = i;
+                btn.id = `num${i}`;
+                btn.onclick = () => selecionarNumero(i);
+                btn.disabled = true; // Inicialmente desabilitado
+                container.appendChild(btn);
+            }
         }
-    }
 
-    function carregarCodigoUsado() {
-        let dados = localStorage.getItem("codigoUsado");
-        if (dados) {
-            codigoUsado = JSON.parse(dados);
+        function selecionarNumero(num) {
+            let idx = numerosSelecionados.indexOf(num);
+
+            if (idx === -1 && numerosSelecionados.length < 15) {
+                numerosSelecionados.push(num);
+                document.getElementById(`num${num}`).classList.add("selected");
+
+                if (numerosBloqueados.includes(num)) {
+                    document.getElementById(`num${num}`).classList.add("vender");
+                }
+            }
+
+            atualizarContador();
+            verificarBotaoVerificar();
         }
-    }
 
-    function salvarCodigoUsado() {
-        localStorage.setItem("codigoUsado", JSON.stringify(codigoUsado));
-    }
-
-    // Função para enviar os números via WhatsApp
-    function enviarViaWhatsApp() {
-        let numeroBloqueadosTexto = `Números Bloqueados: ${numerosBloqueados.join(", ")}`;
-        let numerosSelecionadosTexto = `Números Selecionados: ${numerosSelecionados.join(", ")}`;
-        let mensagem = `${numeroBloqueadosTexto}\n${numerosSelecionadosTexto}`;
-        let url = `https://wa.me/?text=${encodeURIComponent(mensagem)}`;
-        window.open(url, '_blank');
-    }
-
-    function liberarBotoesAposCodigo() {
-        let codigoDigitado = parseInt(document.getElementById("codigo").value);
-        if (codigos.includes(codigoDigitado) && !codigoUsado.includes(codigoDigitado)) {
-            liberarBotoes(true); // Habilitar os botões para selecionar números
-        } else {
-            liberarBotoes(false); // Manter os botões desabilitados
+        function atualizarContador() {
+            document.getElementById("contadorNumeros").innerText = `Números selecionados: ${numerosSelecionados.length}/15`;
         }
-    }
 
-    // Adicionando o evento de input no campo de código
-    document.getElementById("codigo").addEventListener("input", liberarBotoesAposCodigo);
+        function verificarBotaoVerificar() {
+            document.getElementById("verificar").disabled = numerosSelecionados.length !== 15;
+        }
 
-</script>
+        function verificar() {
+            let codigoDigitado = parseInt(document.getElementById("codigo").value);
+            let acertos = numerosSelecionados.filter(n => numerosBloqueados.includes(n)).length;
+            let msg = "";
+
+            if (codigos.includes(codigoDigitado) && !codigoUsado.includes(codigoDigitado)) {
+                codigoUsado.push(codigoDigitado);
+                salvarCodigoUsado();
+
+                atualizarNumerosBloqueados();
+                document.getElementById("numerosBloqueadosContainer").style.display = "grid";
+
+                if (acertos === 5) {
+                    msg = "Parabéns, você ganhou!";
+                    document.getElementById("enviar").style.display = "block"; // Mostrar botão "Enviar"
+                } else {
+                    msg = "Tente novamente.";
+                    document.getElementById("enviar").style.display = "none";
+                }
+                document.getElementById("mensagem").innerText = msg;
+            } else if (codigoUsado.includes(codigoDigitado)) {
+                document.getElementById("mensagem").innerText = "Este código já foi usado. Tente outro.";
+            } else {
+                document.getElementById("mensagem").innerText = "Código inválido.";
+            }
+
+            limparCampos();
+        }
+
+        function limparCampos() {
+            document.getElementById("codigo").value = '';
+            numerosSelecionados = [];
+            atualizarContador();
+            verificarBotaoVerificar();
+            for (let i = 1; i <= 50; i++) {
+                document.getElementById(`num${i}`).classList.remove("selected", "vender");
+            }
+            liberarBotoes(false);
+        }
+
+        function liberarBotoes(habilitar) {
+            for (let i = 1; i <= 50; i++) {
+                document.getElementById(`num${i}`).disabled = !habilitar;
+            }
+        }
+
+        function carregarCodigoUsado() {
+            let dados = localStorage.getItem("codigoUsado");
+            if (dados) {
+                codigoUsado = JSON.parse(dados);
+            }
+        }
+
+        function salvarCodigoUsado() {
+            localStorage.setItem("codigoUsado", JSON.stringify(codigoUsado));
+        }
+
+        function enviarViaWhatsApp() {
+            let numerosBloqueadosTexto = `Números Bloqueados: ${numerosBloqueados.join(", ")}`;
+            let numerosSelecionadosTexto = `Números Selecionados: ${numerosSelecionados.join(", ")}`;
+            let mensagem = `${numerosBloqueadosTexto}\n${numerosSelecionadosTexto}`;
+            let url = "https://api.whatsapp.com/send?phone=5571992290058&text=" + encodeURIComponent(mensagem);
+            window.open(url, "_blank");
+        }
+
+        function liberarBotoesAposCodigo() {
+            let codigoDigitado = parseInt(document.getElementById("codigo").value);
+            if (codigos.includes(codigoDigitado) && !codigoUsado.includes(codigoDigitado)) {
+                liberarBotoes(true); // Habilitar os botões para selecionar números
+            } else {
+                liberarBotoes(false); // Manter os botões desabilitados
+            }
+        }
+
+        document.getElementById("codigo").addEventListener("input", liberarBotoesAposCodigo);
+    </script>
 
 </body>
 </html>
