@@ -203,7 +203,7 @@
         setTimeout(() => {
             document.getElementById("numerosBloqueadosContainer").style.display = "none";
             location.reload(); // Recarregar a página após os números sumirem
-        }, 10000); // 10000 milissegundos = 10 segundos
+        }, 15000); // 10000 milissegundos = 10 segundos
     } else if (codigoUsado.includes(codigoDigitado)) {
         document.getElementById("mensagem").innerText = "Este código já foi usado. Tente outro.";
     } else {
