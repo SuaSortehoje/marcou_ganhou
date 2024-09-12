@@ -92,7 +92,22 @@
             color: white;
             border-radius:10px;
         }
-
+        .blink {
+            font-weight:bold;
+        }
+.blink { animation: blink 1s steps(1, end) infinite; } @keyframes blink { 
+0% { opacity: 1; } 
+2% {color:green;}
+4% {color: gold;}
+5% {color: gold;}
+6% { color:lime;}
+50% { opacity: 0; } 
+51% {color: gold;}
+56% { color:lime;}
+80% { opacity: 1; }
+85% {color: gold;}
+86% { color:lime;}
+ }
     </style>
 </head>
 <body>
@@ -103,6 +118,8 @@
     <p id="mensagem"></p>
     <div id="numerosBloqueadosContainer"></div> <!-- Container para os números bloqueados -->
     <p id="contadorNumeros">Números selecionados: 0/15</p>
+
+    <marquee class="blink">VALOR ATUALIZADO R$ 100.00</marquee>
     <p id="temporizador"></p>
     <button id="enviar" style="display:none;margin-left:30%" onclick="enviarViaWhatsApp()">RECEBER O PREMIO</button>
     <p style="color:gold">Marque 15 números dos 50.  Acertando O5 dos Sorteio, ganha na hora um pix R$ 100,00</p>
