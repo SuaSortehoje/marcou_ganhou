@@ -29,7 +29,7 @@
 
         .btn {
             margin: 1px;
-            padding: 10px 35px;
+            padding: 10px 45px;
             border: 1px solid #ccc;
             border-radius: 5px;
             cursor: pointer;
@@ -61,7 +61,7 @@
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 1px;
-            max-width: 350px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
@@ -79,7 +79,7 @@
             justify-content: center;
             flex-direction:rows;
             text-align: center;
-            margin-left: 40%;
+            margin-left: 55%;
             margin-top: 0px;
             margin-bottom:10px;
             border-radius:10px;
@@ -89,7 +89,7 @@
             display: flex;
             justify-content: center;
             flex-direction:rows;
-            margin-left: 40%;
+            margin-left: 65%;
             margin-top: 12px;
             background: green;
             color: white;
@@ -126,12 +126,15 @@
      margin-left:40%;
  }
  span {
-     font-size:20px;
+     font-size:20px;text-align:center;
  }
  .txarea {
      width:100%;
      height:100px;
-     margin-left:50px;
+     margin-left:5px;
+ }
+ .contNumero{
+     margin-left:60%;
  }
     </style>
 </head>
@@ -145,7 +148,7 @@
     <button id="verificar" onclick="verificar()" disabled>Ver Resultado</button>
     <p id="mensagem"></p>
     <div id="numerosBloqueadosContainer"></div> <!-- Container para os números bloqueados -->
-    <p id="contadorNumeros">Números selecionados: 0/15</p>
+    <p class="contNumero"id="contadorNumeros">Números selecionados: 0/15</p>
 
     <p id="temporizador"></p>
     <button id="enviar" style="display:none;margin-left:30%" onclick="enviarViaWhatsApp()">RECEBER O PREMIO</button>
