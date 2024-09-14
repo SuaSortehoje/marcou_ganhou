@@ -166,7 +166,7 @@
     <button id="verificar" onclick="verificar()" disabled>Ver Resultado</button>
     <p id="mensagem"></p>
     <div id="numerosBloqueadosContainer"></div> <!-- Container para os números bloqueados -->
-    <p class="contNumero"id="contadorNumeros">Números selecionados: 0/20</p>
+    <p class="contNumero"id="contadorNumeros">Números selecionados: 0/15</p>
 
     <p id="temporizador"></p>
     <button id="enviar" style="display:none;margin-left:30%" onclick="enviarViaWhatsApp()">RECEBER O PREMIO</button>
@@ -229,7 +229,7 @@
         function selecionarNumero(num) {
             let idx = numerosSelecionados.indexOf(num);
 
-            if (idx === -1 && numerosSelecionados.length < 20) {
+            if (idx === -1 && numerosSelecionados.length < 15) {
                 numerosSelecionados.push(num);
                 document.getElementById(`num${num}`).classList.add("selected");
 
@@ -244,11 +244,11 @@
         }
 
         function atualizarContador() {
-            document.getElementById("contadorNumeros").innerText = `Números selecionados: ${numerosSelecionados.length}/20`;
+            document.getElementById("contadorNumeros").innerText = `Números selecionados: ${numerosSelecionados.length}/15`;
         }
 
         function verificarBotaoVerificar() {
-            document.getElementById("verificar").disabled = numerosSelecionados.length !== 20;
+            document.getElementById("verificar").disabled = numerosSelecionados.length !== 15;
         }
 
         function verificar() {
