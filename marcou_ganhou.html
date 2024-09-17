@@ -86,14 +86,15 @@
         }
 
         #verificar {
-            display: flex;
+            display: inline;
             justify-content: center;
             flex-direction:rows;
-            margin-left: 40%;
+            margin-left: 10%;
             margin-top: 12px;
             background: green;
             color: white;
             border-radius:10px;
+            font-weight:bold
         }
         .blink {
             font-weight:bold;
@@ -112,6 +113,8 @@
 85% {color: gold;}
 86% { color:lime;}
  }
+ 
+ 
  .pagar{
      color:white;
      font-size:18px;
@@ -130,16 +133,31 @@
  }
   .jafa {
      margin-left:100px;
+     }
+     
+     .credito{
+         margin-left:10px;
+         margin-top: 12px;
+            background: green;
+            color: white;
+            border-radius:10px;
+            font-weight:bold
+            
+            
+            
+            
+     }
     </style>
 </head>
 <body>
     <h1>MARQUE E GANHE NA HORA R$ 200.00</h1>
+  
    <span class="jafa"> Marque </span> <span style="color:gold;font-weight:bold">15</span> números dos <span style="color:gold;font-weight:bold"> 50</span> <br>Acertando  <span style="color:lime;font-weight:bold;">O5 </span>dos Sorteio, ganha na hora um pix <span style="color:lime;font-weight:bold"> R$ 200,00</span><br><br>
     
-   
+ 
     <input class="codig" type="number" id="codigo" placeholder="Digite o código">
     <div id="numeros"></div>
-    <button id="verificar" onclick="verificar()" disabled>Ver Resultado</button>
+    <button id="verificar" onclick="verificar()" disabled>VER RESULTADO</button>  <a href ="https://multijogo.github.io/Link-de-pagamento-pix/"><button class="credito" onclick="gerar()" >COMPRAR CREDITO</button></a>
     <p id="mensagem"></p>
     <div id="numerosBloqueadosContainer"></div> <!-- Container para os números bloqueados -->
     <p id="contadorNumeros">Números selecionados: 0/15</p>
@@ -332,6 +350,10 @@ document.getElementById("enviar").addEventListener("click", enviarViaWhatsApp);
         }
 
         document.getElementById("codigo").addEventListener("input", liberarBotoesAposCodigo);
+        
+        function gerar (){
+       alert("CODIGO de ACESDO E GERADO E LIBERADO APOS O PIX de FORMAR AUTOMATICA\n\nENVIA O COMPROVANTE !!")
+    }
     </script>
 </body>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
