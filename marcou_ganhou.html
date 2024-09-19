@@ -89,7 +89,7 @@
             display: inline;
             justify-content: center;
             flex-direction:rows;
-            margin-left: 10%;
+            margin-left: 5px;
             margin-top: 12px;
             background: green;
             color: white;
@@ -136,28 +136,50 @@
      }
      
      .credito{
-         margin-left:10px;
+         margin-left:5px;
          margin-top: 12px;
             background: green;
             color: white;
             border-radius:10px;
-            font-weight:bold
-            
-            
-            
-            
+            font-weight:bold      
+     }
+     .valorSacar{
+         width:80px;
+         margin-left:260px;
+         border-radius:10px;
+         text-align:center;
+         font-weight:bold;
+         background:grey;
+         outline:none;
+         text-decoration:none;
+         color:
+     }
+     .disponivel{
+         margin-left:65%;
+         font-weight:bold;
+     }
+     .sacar {
+         background:grey;
+         color:Black;
+         font-weight:bold;
+         border-radius:10px;
+         margin-left:5px;
      }
     </style>
 </head>
 <body>
     <h1>MARQUE E GANHE NA HORA R$ 200.00</h1>
-  
+ <label class="disponivel">Pre Disponivel</label> <input class="valorSacar"type="text"value=" R$ 200.00" disabled><br>
    <span class="jafa"> Marque </span> <span style="color:gold;font-weight:bold">15</span> números dos <span style="color:gold;font-weight:bold"> 50</span> <br>Acertando  <span style="color:lime;font-weight:bold;">O5 </span>dos Sorteio, ganha na hora um pix <span style="color:lime;font-weight:bold"> R$ 200,00</span><br><br>
     
  
     <input class="codig" type="number" id="codigo" placeholder="Digite o código">
     <div id="numeros"></div>
-    <button id="verificar" onclick="verificar()" disabled>VER RESULTADO</button>  <a href="compraCreditos.html" ><button class="credito" onclick="gerar()" >COMPRAR CREDITO</button></a>
+    <button id="verificar" onclick="verificar()" disabled>VER RESULTADO</button>  
+    
+    <a href="compraCreditos.html" ><button class="credito" onclick="gerar()" >COMPRAR CREDITO</button></a>
+    
+     <button class="sacar" onclick="gerar()" disabled>SACAR</button></a>
     <p id="mensagem"></p>
     <div id="numerosBloqueadosContainer"></div> <!-- Container para os números bloqueados -->
     <p id="contadorNumeros">Números selecionados: 0/15</p>
