@@ -79,7 +79,7 @@
             justify-content: center;
             flex-direction:rows;
             text-align: center;
-            margin-left: 25%;
+            
             margin-top: 0px;
             margin-bottom:10px;
             border-radius:10px;
@@ -172,22 +172,41 @@
      .din {
          text-align: right;
      }
+     .centra {
+          text-align:center;
+     }
+     .inputnormal {
+         
+         display: flex;
+            justify-content: center;
+            flex-direction:rows;
+          text-align:center;
+     }
+     .btns {
+         
+          text-align:center;
+     }
     </style>
 </head>
 <body>
     <h1>MARQUE E GANHE NA HORA R$ 300.00</h1>
 <div class="pre">
  <label class="disponivel">Pre Disponivel</label></div> <div class="din"><input class="valorSacar"type="text"value=" R$ 300.00" disabled></div><br>
-   <span class="jafa"> Marque </span> <span style="color:gold;font-weight:bold">15</span> números dos <span style="color:gold;font-weight:bold"> 50</span> <br>Acertando  <span style="color:lime;font-weight:bold;">O5 </span>dos Sorteio, ganha na hora um pix <span style="color:lime;font-weight:bold"> R$ 300,00</span><br><br>
+ <div class="centra">
+   <span class="jafa"> Marque </span> <span style="color:gold;font-weight:bold">15</span> números dos <span style="color:gold;font-weight:bold"> 50</span> <br>Acertando  <span style="color:lime;font-weight:bold;">O5 </span>dos Sorteio, ganha na hora um pix <span style="color:lime;font-weight:bold"> R$ 300,00</span></div><br><br>
     
  
-    <input class="codig" type="number" id="codigo" placeholder="Digite o código">
+ <div class="inputnormal"> <input class="codig" type="number" id="codigo" placeholder="Digite o código"></div>
+ 
     <div id="numeros"></div>
-    <button id="verificar" onclick="verificar()" disabled>VER RESULTADO</button>  
+    
+   <div class="btns"> <button id="verificar" onclick="verificar()" disabled>VER RESULTADO</button>  
     
     <a href="compraCreditos.html" ><button class="credito" onclick="gerar()" >COMPRAR CREDITO</button></a>
     
      <button class="sacar" onclick="gerar()" disabled>SACAR</button></a>
+     </div>
+     
     <p id="mensagem"></p>
     <div id="numerosBloqueadosContainer"></div> <!-- Container para os números bloqueados -->
     <p id="contadorNumeros">Números selecionados: 0/15</p>
