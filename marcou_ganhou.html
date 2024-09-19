@@ -168,6 +168,7 @@
          margin-left:5px;
      }
      .pre {
+         margin:0;
          text-align: right;
      }
      .din {
@@ -190,14 +191,12 @@
      
      .mgiDivulgacao{
          width:100%;
-         height:30px;
+         height:20px;
          border:1px solid red;
          
      }
      .imgDiv {
-        position:absolute;
-        width:70%;
-        z-index:1000;
+        
      }
      .propagada {
          color:grey;
@@ -206,16 +205,26 @@
          margin:1px;
          margin-bottom:2px;
      }
+     .slideshow { position:absolute;
+        width:70%;
+        z-index:1000;  height: 30px; overflow: hidden;border:1px solid red; } 
+
+.slideshow img { position: absolute; top: 0; left: 0; opacity: 0; width: 100%; height:30px; animation: fade 3s infinite; } 
+
+.slideshow a { text-decoration: none; padding: 0; margin: 0; }
+
+ @keyframes fade { 0% { opacity: 0; } 20% { opacity: 1; } 33% { opacity: 1; } 53% { opacity: 0; } 100% { opacity: 0; } } 
+
     </style>
 </head>
 <body>
     <h1>MARQUE E GANHE NA HORA R$ 300.00</h1>
 <label class="propagada">propaganda </label>
-<div class="imgDiv"><img src="ladoT.jpg" class="mgiDivulgacao"></div>
+<div class="imgDiv"><div class="slideshow"> <a href="seu-link1"> <img src="ladoT.jpg" alt="ladoT"> </a> <a href="seu-link2"> <img src="imagem2.jpg" alt=""> </a> <a href="seu-link3"> <img src="imagem3.jpg" alt=""></a> </div> 
 <div class="pre">
  <label class="disponivel">Pre Disponivel</label></div> <div class="din"><input class="valorSacar"type="text"value=" R$ 300.00" disabled></div><br>
  <div class="centra">
-   <span class="jafa"> Marque </span> <span style="color:gold;font-weight:bold">15</span> números dos <span style="color:gold;font-weight:bold"> 50</span> <br>Acertando  <span style="color:lime;font-weight:bold;">O5 </span>dos Sorteio, ganha na hora um pix <span style="color:lime;font-weight:bold"> R$ 300,00</span></div><br><br>
+   <span class="jafa"> Marque </span> <span style="color:gold;font-weight:bold">15</span> números dos <span style="color:gold;font-weight:bold"> 50</span> <br>Acertando  <span style="color:lime;font-weight:bold;">O5 </span>dos Sorteio, ganha na hora um pix <span style="color:lime;font-weight:bold"> R$ 300,00</span></div>
     
  
  <div class="inputnormal"> <input class="codig" type="number" id="codigo" placeholder="Digite o código"></div>
