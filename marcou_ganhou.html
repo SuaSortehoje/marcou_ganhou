@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//pt-BR">
 <head>
-    <link rel="shortcut icon" type="image/jpg" href="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/main/marcouGanhou4.jpg">
-    <link rel="icon" href="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/main/marcouGanhou4.jpg" type="image/jpg">
+    <link rel="shortcut icon" type="image/jpg" href="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/main/banner.jpg">
+    <link rel="icon" href="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/main/banner.jpg" type="image/jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
@@ -373,7 +373,7 @@
         setTimeout(() => {
             document.getElementById("numerosBloqueadosContainer").style.display = "none";
             location.reload(); // Recarregar a página após os números sumirem
-        }, 10000); // 15000 milissegundos = 10 segundos
+        }, 15000); // 15000 milissegundos = 10 segundos
     } else if (codigoUsado.includes(codigoDigitado)) {
         document.getElementById("mensagem").innerText = "Este código já foi usado. Tente outro.";
     } else {
@@ -441,7 +441,7 @@ function verificar() {
         setTimeout(() => {
             document.getElementById("numerosBloqueadosContainer").style.display = "none";
             location.reload(); // Recarregar a página após os números sumirem
-        }, 10000); // 10000 milissegundos = 10 segundos
+        }, 15000); // 10000 milissegundos = 10 segundos
     } else if (codigoUsado.includes(codigoDigitado)) {
         document.getElementById("mensagem").innerText = "Este código já foi usado. Tente outro.";
     } else {
