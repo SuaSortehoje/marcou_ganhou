@@ -75,11 +75,11 @@
         }
 
         .codig {
-            display: flex;
+            display: inline;
             justify-content: center;
             flex-direction:rows;
             text-align: center;
-            
+            width:40%;
             margin-top: 0px;
             margin-bottom:10px;
             border-radius:10px;
@@ -179,8 +179,8 @@
      }
      .inputnormal {
          
-         display: flex;
-            justify-content: center;
+         display: block-inline;
+            justify-content:center;
             
           text-align:center;
      }
@@ -248,13 +248,15 @@
    <span class="jafa"> Marque </span> <span style="color:gold;font-weight:bold">15</span> números dos <span style="color:gold;font-weight:bold"> 50</span> <br>Acertando  <span style="color:lime;font-weight:bold;">O5 </span>dos Sorteio, ganha na hora um pix <span style="color:lime;font-weight:bold"> R$ 300,00</span></div>
     
  
- <div class="inputnormal"> <input class="codig" type="number" id="codigo" placeholder="Digite o código"></div>
+ <div class="inputnormal"> <input class="codig" type="number" id="codigo" placeholder="Digite o código">
+ 
+   <a href="compraCreditos.html" ><button class="credito" onclick="gerar()" >COMPRAR CREDITO</button></a></div> 
  
     <div id="numeros"></div>
     
    <div class="btns"> <button id="verificar" onclick="verificar()" disabled>VER RESULTADO</button>  
     
-    <a href="compraCreditos.html" ><button class="credito" onclick="gerar()" >COMPRAR CREDITO</button></a>
+ 
     
      <button class="sacar" onclick="gerar()" disabled>SACAR</button></a>
      </div>
