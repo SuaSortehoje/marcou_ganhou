@@ -7,10 +7,13 @@
     <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
     
     <title>Marcou Ganhou Recebeu</title>
-    <style>
+    <style> .fundoCimar {
+    background:skyblue;
+    border-radius:0px 0px 30px 30px;
+}
         body {
      background-repeat: no-repeat;
-            color: white;
+            color: black;
             width:100%;
             background:black;
             
@@ -252,6 +255,7 @@
     </style>
 </head>
 <body>
+<div class="fundoCimar">
     <h1>MARQUE E GANHE NA HORA R$ 300.00</h1>
 <label class="propagada">propaganda </label>
 
@@ -274,7 +278,7 @@
  <div class="inputnormal"> <input class="codig" type="number" id="codigo" placeholder="Digite o código">
  
    <a href="compraCreditos.html" ><button class="credito" onclick="gerar()" >COMPRAR CREDITO</button></a></div> 
- 
+ </div>
     <div id="numeros"></div>
     
    <div class="btns"> <button id="verificar" onclick="verificar()" disabled>VER RESULTADO</button>  
