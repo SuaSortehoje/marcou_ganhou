@@ -7,14 +7,17 @@
     <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
     
     <title>Marcou Ganhou Recebeu</title>
-    <style> .fundoCimar {
-    background:skyblue;
+    <style> 
+    .fundoCimar {
+    background:tomato;
+ 
     border-radius:0px 0px 30px 30px;
 }
         body {
      background-repeat: no-repeat;
             color: black;
             width:100%;
+            font-weight:bold;
             background:black;
             
         }
@@ -251,6 +254,8 @@
     width:90%;
     margin-left:5px;
       height:30px;
+}.contaNumero{
+    color:white;
 }
     </style>
 </head>
@@ -290,7 +295,7 @@
      
     <p id="mensagem"></p>
     <div id="numerosBloqueadosContainer"></div> <!-- Container para os números bloqueados -->
-    <p id="contadorNumeros">Números selecionados: 0/15</p>
+    <p class="contaNumero" id="contadorNumeros">Números selecionados: 0/15</p>
 
     <p id="temporizador"></p>
     <button id="enviar" style="display:none;margin-left:30%" onclick="enviarViaWhatsApp()">RECEBER O PREMIO</button>
