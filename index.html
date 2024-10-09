@@ -14,14 +14,7 @@
     border-radius:0px 0px 30px 30px;
 }
         body {
-     background-repeat: no-repeat;
-            color: black;
-            width:100%;
-            font-weight:bold;
-            background:tomato;
-            
-        }
-
+            transition: background-color 0.5s;}
         h1 {
             display: flex;
             justify-content: center;
@@ -559,6 +552,22 @@ document.getElementById("enviar").addEventListener("click", enviarViaWhatsApp);
         function gerar (){
        alert("CODIGO de ACESSO GERADO COM SUCESSO  SERA LIBERADO APOS O PIX de FORMAR AUTOMATICA\n\nENVIA O COMPROVANTE !!")
     }
+             // Array de cores
+        var cores = ['#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#A133FF'];
+
+        // Função para mudar a cor do background
+        function mudarCorBackground() {
+            // Selecionar uma cor aleatória do array
+            var corAleatoria = cores[Math.floor(Math.random() * cores.length)];
+            // Aplicar a cor ao background do body
+            document.body.style.backgroundColor = corAleatoria;
+        }
+
+        // Chamar a função a cada 30 minutos (30 minutos = 30 * 60 * 1000 milissegundos)
+        setInterval(mudarCorBackground, 0.3 * 6 * 1000);
+
+        // Mudar a cor imediatamente ao carregar a página
+        mudarCorBackground();
     </script>
 </body>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
