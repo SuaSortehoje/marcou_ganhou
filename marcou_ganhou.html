@@ -10,11 +10,18 @@
     <style> 
     .fundoCimar {
     background:purple;
+    transition: background-color 0.5s;
  color:white;
     border-radius:0px 0px 30px 30px;
 }
         body {
-            transition: background-color 0.5s;}
+            
+        background: url('https://picsum.photos/1600/900?random=1');
+            background-size:cover;
+            background:min-height:100vh;
+            background-position:center;    
+            }
+            
         h1 {
             display: flex;
             justify-content: center;
@@ -91,7 +98,7 @@
             flex-direction:rows;
             margin-left: 10px;
             margin-top: 12px;
-            background: gold;
+            background: skyblue;
             color: black;
             border-radius:10px;
             font-weight:bold
@@ -210,24 +217,18 @@
      .slideshow {
           position:absolute;
         width:70%;
-        background-image: url(https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/melhorGesso.jpg);
+        background-image: url(https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/ladoT.jpg);
         
       height: 30px; overflow: hidden;border:1px solid red; } 
 
-.slideshow img { position: absolute; top: 0; left: 0; background-image: url(https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/melhorGesso.jpg); width: 100%; height:30px; animation: fade 5s infinite; } 
+.slideshow img { position: absolute; top: 0; left: 0; background-image: url(https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/pagSeguro.jpg); width: 100%; height:30px; animation: fade 20s infinite; } 
 
 .slideshow a { text-decoration: none; padding: 0; margin: 0; }
 
  @keyframes fade { 
-  0%  { opacity: 0; } 
-    10%  { opacity: 0; } 
-      20%  { opacity: 0; } 
-  
-  50% { opacity: 100; } 
-  
-  80% { opacity: 0; } 
-  90% { opacity: 0; } 
-  100% { opacity: 0; } 
+  10%  { opacity: 1; } 
+    50%  { opacity: 0; } 
+      100%  { opacity: 0; } 
   } 
   .imgCadeado {
       width:30%;
@@ -258,13 +259,10 @@
 <label class="propagada">propaganda </label>
 
 
-<div class="slideshow"> <a href="https://wa.me/5571993010261"> <img src="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/ladoT.jpg" alt="ladoT"></a> 
+<div class="slideshow"> <a href="https://wa.me/5571993010261"> <img src="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/pagSeguro.jpg" alt="ladoT"></a> 
 
-<a href="https://wa.me/5571999259612"> <img src="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/melhorGesso.jpg" alt="melhorGesso"></a> 
-
- <a href="https://wa.me/5571993010261"> <img src="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/ladoT.jpg" alt="ladoT"></a> 
-
-<a href="https://wa.me/5571993010261"> <img src="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/ladoT.jpg" alt="lado"></a> </div> 
+<a href="https://wa.me/5571999259612"> <img src="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/ladoT.jpg" alt="melhorGesso"></a> 
+</div>
 
 
 <div class="pre">
@@ -273,9 +271,9 @@
    <span class="jafa"> Marque </span> <span style="color:gold;font-weight:bold">15</span> números dos <span style="color:gold;font-weight:bold"> 50</span> <br>Acertando  <span style="color:gold;font-weight:bold;">O5 </span>dos Sorteio, ganha na hora um pix <span style="color:lime;font-weight:bold"> R$ 300,00</span></div>
     
  
- <div class="inputnormal"> <input class="codig" type="number" id="codigo" placeholder="Digite o código">
+ <div class="inputnormal"> <input class="codig" type="number" id="codigo" placeholder="Digite Código Acesso">
  
-   <a href="compraCreditos.html" ><button class="credito" onclick="gerar()" >COMPRAR CREDITO</button></a></div> 
+   <a href="compraCreditos.html" ><button class="credito" onclick="gerar()" >COMPRAR CODIGO</button></a></div> 
  </div>
     <div id="numeros"></div>
     
@@ -298,7 +296,7 @@
        <img class="imgSatifation" src="satisfation.webp">
        </div>
        
-  <marquee class="blink">ACUMULOU<span class="pagar"> R$ 2.00 </span>GANHA <span class="pagar">R$ 300.00</span></marquee>
+  <marquee class="blink">ACUMULOU<span class="pagar"> R$ 2.00 </span>GANHA <span class="pagar">R$ 300.00, A SORTE E SUA <span class="blink">A GARANTIA E NOSSA</span></marquee>
  
    <br>
    <div class="regraDiv">
@@ -553,14 +551,14 @@ document.getElementById("enviar").addEventListener("click", enviarViaWhatsApp);
        alert("CODIGO de ACESSO GERADO COM SUCESSO  SERA LIBERADO APOS O PIX de FORMAR AUTOMATICA\n\nENVIA O COMPROVANTE !!")
     }
              // Array de cores
-        var cores = ['#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#A133FF'];
+        var cores = ['#FF5733', '#3357FF', '#FF33A1', '#A133FF', '#000000', '#0014ed', '#fffa00'];
 
         // Função para mudar a cor do background
         function mudarCorBackground() {
             // Selecionar uma cor aleatória do array
             var corAleatoria = cores[Math.floor(Math.random() * cores.length)];
             // Aplicar a cor ao background do body
-            document.body.style.backgroundColor = corAleatoria;
+            document.fundoCima.style.backgroundColor = corAleatoria;
         }
 
         // Chamar a função a cada 30 minutos (30 minutos = 30 * 60 * 1000 milissegundos)
