@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//pt-BR">
 <head>
     <link rel="shortcut icon" type="image/jpg" href="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/main/banner.jpg">
-    <link rel="icon" href="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/main/banner1.jpg" type="image/jpg">
+    <link rel="icon" href="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/main/banner.jpg" type="image/jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
@@ -10,11 +10,18 @@
     <style> 
     .fundoCimar {
     background:purple;
+    transition: background-color 0.5s;
  color:white;
     border-radius:0px 0px 30px 30px;
 }
         body {
-            transition: background-color 0.5s;}
+            
+        background: url('https://picsum.photos/1600/900?random=1');
+            background-size:cover;
+            background:min-height:100vh;
+            background-position:center;    
+            }
+            
         h1 {
             display: flex;
             justify-content: center;
@@ -91,7 +98,7 @@
             flex-direction:rows;
             margin-left: 10px;
             margin-top: 12px;
-            background: gold;
+            background: skyblue;
             color: black;
             border-radius:10px;
             font-weight:bold
@@ -210,24 +217,18 @@
      .slideshow {
           position:absolute;
         width:70%;
-        background-image: url(https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/melhorGesso.jpg);
+        background-image: url(https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/ladoT.jpg);
         
       height: 30px; overflow: hidden;border:1px solid red; } 
 
-.slideshow img { position: absolute; top: 0; left: 0; background-image: url(https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/melhorGesso.jpg); width: 100%; height:30px; animation: fade 5s infinite; } 
+.slideshow img { position: absolute; top: 0; left: 0; background-image: url(https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/pagSeguro.jpg); width: 100%; height:30px; animation: fade 20s infinite; } 
 
 .slideshow a { text-decoration: none; padding: 0; margin: 0; }
 
  @keyframes fade { 
-  0%  { opacity: 0; } 
-    10%  { opacity: 0; } 
-      20%  { opacity: 0; } 
-  
-  50% { opacity: 100; } 
-  
-  80% { opacity: 0; } 
-  90% { opacity: 0; } 
-  100% { opacity: 0; } 
+  10%  { opacity: 1; } 
+    50%  { opacity: 0; } 
+      100%  { opacity: 0; } 
   } 
   .imgCadeado {
       width:30%;
@@ -250,21 +251,76 @@
 }.contaNumero{
     color:white;
 }
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos do modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 25%;
+    
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+}
+
+/* Botão de fechar (X) */
+.closeBtn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+    color: #000;
+    cursor: pointer;
+}
+p{
+    color:gold;
+    font-weight:bold;
+}
     </style>
+      <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="alertModal" class="modal">
+        <div class="modal-content">
+            <span class="closeBtn">&times;</span>
+            <p>CODIGO DE ACESSO, SERA GERADO E LIBERADO APÓS O PAGAMENTO DE FORMAR AUTOMÁTICA!</p>
+            <!-- Botão para redirecionar -->
+             <a href="compraCreditos.html" ><button class="credito">COMPRAR CODIGO</button></a>
+             </div> 
+        </div>
+
+    
 <div class="fundoCimar">
     <h1>MARQUE E GANHE NA HORA R$ 300.00</h1>
 <label class="propagada">propaganda </label>
 
 
-<div class="slideshow"> <a href="https://wa.me/5571993010261"> <img src="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/ladoT.jpg" alt="ladoT"></a> 
+<div class="slideshow"> <a href="https://wa.me/5571993010261"> <img src="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/pagSeguro.jpg" alt="ladoT"></a> 
 
-<a href="https://wa.me/5571999259612"> <img src="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/melhorGesso.jpg" alt="melhorGesso"></a> 
-
- <a href="https://wa.me/5571993010261"> <img src="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/ladoT.jpg" alt="ladoT"></a> 
-
-<a href="https://wa.me/5571993010261"> <img src="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/ladoT.jpg" alt="lado"></a> </div> 
+<a href="https://wa.me/5571999259612"> <img src="https://raw.githubusercontent.com/SuaSortehoje/marcou_ganhou/refs/heads/main/ladoT.jpg" alt="melhorGesso"></a> 
+</div>
 
 
 <div class="pre">
@@ -273,9 +329,10 @@
    <span class="jafa"> Marque </span> <span style="color:gold;font-weight:bold">15</span> números dos <span style="color:gold;font-weight:bold"> 50</span> <br>Acertando  <span style="color:gold;font-weight:bold;">O5 </span>dos Sorteio, ganha na hora um pix <span style="color:lime;font-weight:bold"> R$ 300,00</span></div>
     
  
- <div class="inputnormal"> <input class="codig" type="number" id="codigo" placeholder="Digite o código">
+ <div class="inputnormal"> <input class="codig" type="number" id="codigo" placeholder="Digite Código Acesso">
  
-   <a href="compraCreditos.html" ><button class="credito" onclick="gerar()" >COMPRAR CODIGO</button></a></div> 
+ <button id="refreshBtn" class="credito">COMPRAR CODIGO</button>
+  </div>
  </div>
     <div id="numeros"></div>
     
@@ -304,6 +361,39 @@
    <div class="regraDiv">
    <a class="regra"href="regra.html">como jogar </div></a>
     <script>
+            // Obtém o modal e o botão de fechar
+var modal = document.getElementById("alertModal");
+var closeBtn = document.getElementsByClassName("closeBtn")[0];
+var refreshBtn = document.getElementById("refreshBtn"); 
+
+// Função para abrir o modal
+function openModal() {
+    modal.style.display = "block";
+}
+
+// Função para fechar o modal
+function closeModal() {
+    modal.style.display = "none";
+}
+
+// Fechar modal ao clicar no botão de fechar
+closeBtn.onclick = function() {
+    closeModal();
+}
+
+// Fechar modal ao clicar fora dele
+window.onclick = function(event) {
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+
+// Exibe o modal automaticamente ao carregar a página
+window.onload = function() {
+    openModal();
+}
+refreshBtn.onclick = function() { location.reload(); }
+        
         let numerosBloqueados = [];
         let codigos = [14081980, 195668863, 653096775, 129458784, 647644585, 443128755, 978833854, 699939985, 767384775, 560098454, 647720985, 878867472, 441379895, 987877854, 691997689, 811977998, 108488515, 313503398, 806521291, 366222274, 716412153, 592315254, 846882055, 504350967, 673207856, 209122885, 487021874, 337834017, 596597699, 387881987, 309821965, 317663273, 507683477, 929766404, 446224552, 394128835, 887963495, 960901270, 491987744, 249212270, 956535448, 003496557, 840776998, 217612049, 739668764, 466345912, 189763211, 112967891, 904432227, 595665575, 109613223, 899876852, 755228448, 960976264, 216594314, 919098432, 284337447, 101697666, 702397611, 229654597, 874016500, 621216610, 336090028, 485980154, 635598519, 286682713, 732880862, 195658863, 653677587, 129458884, 986476585, 443438755, 978638854, 699975985, 767388775, 005600454, 647728865, 878863674, 441365795, 965878854, 691539989, 811999998, 108784815, 313505598, 806528891, 366228474, 716094153, 592329854, 846668855, 504376967, 673275056, 209651885, 487029814, 337808817, 596587999, 367871987, 309878265, 317746673, 507846877, 999297604, 446224299, 394127635, 812879695, 960907900, 491988844, 249227980, 956544658, 349657657, 840757998, 217686049, 739656664, 465396612, 189768711, 112988691, 966044327, 595658875, 109617523, 899800852, 755223288, 960909264, 217565914, 919970432, 284338877, 101696966, 702396411, 229654597, 874019900, 621211660, 336075928, 485986854, 635551900, 286671413, 732888662]; // Lista de códigos válidos
         let codigoUsado = [];
@@ -550,7 +640,7 @@ document.getElementById("enviar").addEventListener("click", enviarViaWhatsApp);
         document.getElementById("codigo").addEventListener("input", liberarBotoesAposCodigo);
         
         function gerar (){
-       alert("CODIGO de ACESSO GERADO COM SUCESSO  SERA LIBERADO APOS O PIX de FORMAR AUTOMATICA\n\nENVIA O COMPROVANTE !!")
+       alert("CODIGO de ACESSO GERADO COM SUCESSO  SERA LIBERADO APOS O PIX de FORMAR AUTOMATICA")
     }
              // Array de cores
         var cores = ['#FF5733', '#3357FF', '#FF33A1', '#A133FF', '#000000', '#0014ed', '#fffa00'];
@@ -560,7 +650,7 @@ document.getElementById("enviar").addEventListener("click", enviarViaWhatsApp);
             // Selecionar uma cor aleatória do array
             var corAleatoria = cores[Math.floor(Math.random() * cores.length)];
             // Aplicar a cor ao background do body
-            document.body.style.backgroundColor = corAleatoria;
+            document.fundoCima.style.backgroundColor = corAleatoria;
         }
 
         // Chamar a função a cada 30 minutos (30 minutos = 30 * 60 * 1000 milissegundos)
@@ -568,6 +658,7 @@ document.getElementById("enviar").addEventListener("click", enviarViaWhatsApp);
 
         // Mudar a cor imediatamente ao carregar a página
         mudarCorBackground();
+    
     </script>
 </body>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
